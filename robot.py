@@ -22,4 +22,3 @@ def setFullBrake():
 def setForward():
     m1.run(Raspi_MotorHAT.FORWARD)
     m2.run(Raspi_MotorHAT.FORWARD)
-
