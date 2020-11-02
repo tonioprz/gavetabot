@@ -19,6 +19,10 @@ class Robot:
     def setMotorSpeed(self,sp1,sp2):
         if sp1<0: sp1 = -sp1
         if sp2<0: sp2 = -sp2
+
+        sp1 /= 255
+        sp2 /= 255
+
         self.m1.setSpeed(sp1)
         self.m2.setSpeed(sp2)
 
@@ -38,7 +42,10 @@ class Robot:
         self.m1.run(Raspi_MotorHAT.BACKWARD)
         self.m2.run(Raspi_MotorHAT.FORWARD)
 
-    def Move(self,sp1,sp2):
+    def move(self,sp1,sp2):
+        sp1 /= 255
+        sp2 /= 255
+
         if sp1>0: self.m1.run(Raspi_MotorHAT.FORWARD)
         if sp1<0: self.m1.run(Raspi_MotorHAT.BACKWARD)
         if sp1==0: self.m1.run(Raspi_MotorHAT.BRAKE)
